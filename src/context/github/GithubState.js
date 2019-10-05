@@ -55,10 +55,6 @@ const GithubState = props => {
     });
   };
 
-
-
-
-  
   // Clear Users
   const clearUsers = () => {
     dispatch({

@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
 import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/alert/alertContext';
 
-const Search = ({ clearForm, setAlert }) => {
+const Search = () => {
   //this initializes the context (the global state)
   const githubContext = useContext(GithubContext);
   const { users, clearUsers } = githubContext;
+
+  const alertContext = useContext(AlertContext);
+  const { setAlert } = alertContext;
 
   //the "local" state
   const [text, setText] = useState('');
@@ -46,10 +49,6 @@ const Search = ({ clearForm, setAlert }) => {
       )}
     </div>
   );
-};
-
-Search.propTypes = {
-  setAlert: PropTypes.func.isRequired
 };
 
 export default Search;
